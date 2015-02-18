@@ -1,0 +1,51 @@
+// colors
+
+@col_home:    #3BB270;
+@col_aktuell: #708090;
+@col_kita:    #FF6347;
+@col_konzept: #008B8B;
+@col_kontakt: #B7850A;
+
+// fonts
+
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,700);
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:700);
+
+@header_font: 'Gentium Basic', 'Georgia', times, serif;
+@text_font: 'Gentium Basic', 'Georgia', times, serif;
+@nav_font: 'Roboto', 'Helvetica', sans-serif;
+@font_size: 19px;
+
+// styles
+
+@import 'layout.less';
+@import 'typo.less';
+
+.cd-fixed-bg {
+	background-image: url(../img/bg.png);
+}
+
+.cd-fixed-bg.home,
+.cd-scrolling-bg.home {
+	background-color: @col_home;
+}
+
+.cd-fixed-bg.aktuell,
+.cd-scrolling-bg.aktuell {
+	background-color: @col_aktuell;
+}
+
+.cd-fixed-bg.kita,
+.cd-scrolling-bg.kita {
+	background-color: @col_kita;
+}
+
+.cd-fixed-bg.konzept,
+.cd-scrolling-bg.konzept {
+	background-color: @col_konzept;
+}
+
+.cd-fixed-bg.kontakt,
+.cd-scrolling-bg.kontakt {
+	background-color: @col_kontakt;
+}

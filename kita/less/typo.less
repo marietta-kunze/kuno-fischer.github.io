@@ -1,0 +1,55 @@
+body, td, textarea, input {
+	font-family: @text_font;
+	font-size: @font_size;
+}
+
+// -- general styles ----------------------------------------------------------
+
+section {
+	line-height: 1.5;
+	padding: 1em 0;
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: @header_font;
+		font-weight: 700;
+		font-size: 2em;
+	}
+	
+	h2 {font-size: 1.7em};
+	h3 {font-size: 1.5em};
+	h4 {font-size: 1.3em};
+	h5,h6 {font-size: 1.1em};
+
+	p {
+		margin: .5em 0;
+	}
+
+	ul {
+		li {
+			position: relative;
+			padding: .2em 0 .2em .7em;
+		}
+		li:before {
+			position: absolute;
+			top: .2em;
+			left: 0;
+			content: "\0BB";
+		}
+	
+		ul {
+			margin: 0;	
+			li:before {
+				top: .2em;
+				content: "-";
+			}
+		}
+	}
+}
+
+// -- teaser titles -----------------------------------------------------------
+.cd-fixed-bg h1 {
+	color: white;
+	font-size: 5em; // TOOO -- responsive by page width
+	margin-top: -.5em;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
