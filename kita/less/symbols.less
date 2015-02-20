@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    src: url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), 
+	     url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), 
+		 url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), 
+		 url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
+ul li.icn {
+	padding-left: 2em;
+	&:before {
+		top: .15em;
+		width: 1.8em;
+		text-align: center;
+	}
+}
+
+i.icn,
+a.icn,
+li.icn {
+	&:before {
+		font-family: FontAwesome;
+		margin-right: 6pt;
+	}
+	
+	// complete liste of symbols: http://astronautweb.co/snippet/font-awesome/
+	&.mail:before     { content:"\f003" }
+	&.tel:before      { content:"\f095" }
+	&.location:before { content:"\f041" }
+}
