@@ -37,6 +37,10 @@ section {
 		   		hyphens: auto;
 	}
 	
+	em {
+		font-style: italic;
+	}
+	
 	a[href] {
 		position: relative;
 		z-index: 5;
@@ -75,6 +79,10 @@ section {
 		color: #444;
 	}
 	
+	a.i:after {
+		display: none;
+	}
+	
 	a[href]:hover:after {
 		opacity: 1;
 	}
@@ -102,6 +110,10 @@ section {
 		&.no li:before {
 			content: "" !important;
 		}
+	}
+	
+	img {
+		max-width: 100%;
 	}
 }
 
