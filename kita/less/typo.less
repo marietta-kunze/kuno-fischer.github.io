@@ -16,29 +16,72 @@ section {
 	color: @text_col;
 	font-weight: 300;
 	
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3,h4, h5, h6 {
 		font-family: @header_font;
 		font-weight: 700;
 		font-size: 2em;
 		color: @header_col;
 		text-align: center;
-		margin: .5em 0 .3em;
 	}
 	
+	div.h, h1, h2, h3, h4, h5, h6{
+		margin: 2.5em auto .4em;
+	}
+	
+	h1, h2, h3 {
+		text-transform: uppercase;
+	}
+	
+	h4, h5, h6 {
+		margin-top: 1.2em;
+		font-family: @text_font;
+		font-weight: 400;
+		text-align: left;
+	}
+		
 	h2 {font-size: 1.7em};
 	h3 {font-size: 1.5em};
 	h4 {font-size: 1.3em};
 	h5,h6 {font-size: 1.1em};
+	
+	div.h {
+		position: relative;
+		text-align: center;
+		
+		h1,h2,h3,h4,h5,h6 {
+			display: inline-block;
+			padding: 0 1em;
+			margin: 0;
+		}
+		
+		&:after {
+			content: "";
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			left: -2%;
+			width: 104%;
+			border-top: 1px solid fade(@text_col, 50%);
+		}
+	}
 
-	p {
-		margin: .5em 0 1em;
+	p, ul, ol, dl {
+		margin: 1em 0 .5em;
 		-webkit-hyphens: auto;
 	       -moz-hyphens: auto;
 		   		hyphens: auto;
+	}	
+	h1, h2, h3, h4, h5, h5, div.h {
+		& + ul,
+		& + p,
+		& + dl {
+			margin-top: 0;
+		}
 	}
 	
 	em {
-		font-style: italic;
+		font-weight: 400;
+//		font-style: italic;
 	}
 	
 	a[href] {
@@ -111,7 +154,39 @@ section {
 			content: "" !important;
 		}
 	}
+
+	dl.cal {
+		@fs: 0.8em;
+		@bl: -1.7em;
+		
+		// ensure that left edge aligns with normal text
+		margin-left: -1 * @fs * @bl; 
+		
+		dt {
+			font-size: @fs;
+			font-weight: 400;
+			letter-spacing: .5pt;
+			position: relative;
+			
+			// requires FontAwesome to be loaded
+			&:before {
+				position: absolute;
+				left: @bl;
+				width: 1em;
+				font-family: FontAwesome;
+				content: "\f073";
+			}
+		}
+		
+		dd {
+			margin-bottom: .7em;
+		}
+	}
 	
+	div.clr {
+		clear: both;
+	}
+			
 	img {
 		max-width: 100%;
 	}
