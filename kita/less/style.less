@@ -1,10 +1,10 @@
-// colors
+// colors, from http://design-seeds.com/search?hex=FF6347
 
 @col_home:    #3BB270;
-@col_aktuell: #708090;
+@col_aktuell: #517DC4; //#708090;
 @col_kita:    #FF6347;
 @col_konzept: #008B8B;
-@col_kontakt: #B7850A;
+@col_kontakt: #9E5696; //#B7850A; // #AAF0CD; // (lightgreen)
 
 @text_col: white;
 @header_col: @text_col;
@@ -12,7 +12,7 @@
 // fonts
 
 @import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500);
 
 @header_font: 'Gentium Basic', 'Georgia', times, serif;
 @text_font: 'Roboto', 'Helvetica', sans-serif;
@@ -66,5 +66,15 @@
 .cd-scrolling-bg.kontakt h1,
 .cd-scrolling-bg.kontakt h2,
 .cd-scrolling-bg.kontakt h3 {
+	
+//	@text_col: #21603F;
+	
 	background-color: @col_kontakt;
+	// color: @text_col;
+	// section {
+	// 	color: @text_col;
+	// 	div.h:after {
+	// 		border-color: fade(@text_col, 60%);
+	// 	}
+	// }
 }
