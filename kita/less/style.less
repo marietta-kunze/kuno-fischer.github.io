@@ -4,9 +4,10 @@
 @col_aktuell: #7096CC; //#708090;
 @col_kita:    #FF6347;
 @col_konzept: #008B8B;
-@col_kontakt: #9E5696; //#B7850A; // #AAF0CD; // (lightgreen)
+@col_kontakt: #AA6DA3; //#9E5696; //#B7850A; // #AAF0CD; // (lightgreen)
 
-@text_col: white;
+@text_col: #eee;
+@link_col: #fff;
 @header_col: @text_col;
 
 // fonts
@@ -35,6 +36,7 @@
 .cd-scrolling-bg.home h2,
 .cd-scrolling-bg.home h3 {
 	background-color: @col_home;
+	a[href]:hover {color: darken(@col_home, 20%);}
 }
 
 .cd-fixed-bg.aktuell,
@@ -43,6 +45,7 @@
 .cd-scrolling-bg.aktuell h2,
 .cd-scrolling-bg.aktuell h3 {
 	background-color: @col_aktuell;
+	a[href]:hover {color: darken(@col_aktuell, 20%);}
 }
 
 .cd-fixed-bg.kita,
@@ -51,6 +54,7 @@
 .cd-scrolling-bg.kita h2,
 .cd-scrolling-bg.kita h3 {
 	background-color: @col_kita;
+	a[href]:hover {color: darken(@col_kita, 20%);}
 }
 
 .cd-fixed-bg.konzept,
@@ -59,6 +63,7 @@
 .cd-scrolling-bg.konzept h2,
 .cd-scrolling-bg.konzept h3 {
 	background-color: @col_konzept;
+	a[href]:hover {color: darken(@col_konzept, 20%);}
 }
 
 .cd-fixed-bg.kontakt,
@@ -66,15 +71,6 @@
 .cd-scrolling-bg.kontakt h1,
 .cd-scrolling-bg.kontakt h2,
 .cd-scrolling-bg.kontakt h3 {
-	
-//	@text_col: #21603F;
-	
 	background-color: @col_kontakt;
-	// color: @text_col;
-	// section {
-	// 	color: @text_col;
-	// 	div.h:after {
-	// 		border-color: fade(@text_col, 60%);
-	// 	}
-	// }
+	a[href]:hover {color: darken(@col_kontakt, 20%);}
 }
