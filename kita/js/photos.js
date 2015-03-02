@@ -5,11 +5,11 @@
 	var set_id = "72157641216022374";
 	var api_key = "27d64da4e2b09b01ee477b37629fac67";
 	var callback = "jsonFlickrCallback" + new Date().getTime();
-	var url = "//api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=" + set_id + "&per_page=1000&page=1&api_key=" + api_key + "&jsoncallback=" + callback;
+	var url = "https://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=" + set_id + "&per_page=1000&page=1&api_key=" + api_key + "&jsoncallback=" + callback;
 
 	// by user
 	var user_id = "8431584@N06";
-	var url = "//api.flickr.com/services/rest/?format=json&method=flickr.people.getPhotos&user_id=" + user_id + "&per_page=1000&page=1&api_key=" + api_key + "&jsoncallback=" + callback;
+	var url = "https://api.flickr.com/services/rest/?format=json&method=flickr.people.getPhotos&user_id=" + user_id + "&per_page=1000&page=1&api_key=" + api_key + "&jsoncallback=" + callback;
 
 	function choose(input, num) {
 		num = Math.min(num, input.length);
