@@ -81,6 +81,48 @@
 	}
 }
 
+@media screen and (max-width: @handset) {
+	.cd-main-nav {
+		width: 40px;
+		height: 40px;
+		
+		&:after {
+			font-family: FontAwesome;
+			content: "\f0c9";
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			margin: 12px 5% 0 0;
+			cursor: pointer;
+		}
+		
+		ul {
+			position: absolute;
+			left: 0;
+			top: 60px;
+			width: 100%;
+			background-color: darken(@text_col, 5%);
+			border-bottom: 1px solid #444;
+			
+			display: none;
+		}
+		
+		li {
+			margin: 0;
+			display: block;
+			width: 100%;
+			text-align: center;
+			border-top: 1px solid #444;
+		}
+	}	
+	.cd-main-nav.expand {
+		ul {
+			
+			display: block;
+		}
+	}
+}
+
 // -- CONTENT -----------------------------------------------------------------
 // main.cd-main-content ... wraps all sections
 // + div.cd-fixed-bg     ... teaser of the section
@@ -130,4 +172,20 @@ html, body {
 	margin: 0 auto;
 }
 
+@media screen and (max-width: @handset) {
+	.cd-fixed-bg {
+		background-image: none !important;
+		min-height: 0;
+		z-index: 1;
+		border-top: 1px solid #fff;
+		
+		h1 {
+			padding: 1.5em 0 1.3em;
+			position: relative;
+		}
+	}
+	.cd-fixed-bg.home {
+		padding-top: 70px;
+	}
+}
 

@@ -8,13 +8,18 @@ ul#photos.ready {
 	opacity: 1;
 	position: relative;
 	margin: 2em auto;
-	width: 500px;
-	height: 500px;
+	width: 80vw;
+	height: 80vw;
+	
+	max-height: 500px;
+	max-width: 500px;
 	overflow: hidden;
 	border-radius: 250px;
 	
 	box-shadow:
-		0 0 0 1px darken(@col_home, 10%);
+	    0 0 0 10px fade(@text_col, 50%),
+		0 0 0 5px @text_col,
+		0 0 0 1px #444;
 	
 	list-style-type: none;
 	padding:0;

@@ -1,5 +1,9 @@
 (function(){
-	// TODO start/Stop-time to stop loading on slow connection
+	// TODO 
+	// - start/Stop-time to stop loading on slow connection
+	// - add controls
+	// - add link to source collection
+	// - add responsiveness: store chosen photos, (re)load different sizes depending on viewport width, reset only if thresholds for veiwport widths have been exceeded, create different styles (rect on mobile) that are independent of image sizes
 
 	// by set
 	var set_id = "72157641216022374";
@@ -21,7 +25,7 @@
 	}
 	
 	function rotate(el, no) {
-		console.info("rotate", el, no, _.gid(el))
+//		console.info("rotate", el, no, _.gid(el))
 		
 		var kids = _.gid(el).childNodes;
 		
@@ -33,10 +37,9 @@
 			kids[i].style.zIndex = -2;
 			if (i == no) {
 				kids[i].style.zIndex = -1;
-				console.log(kids[i], kids[i].style.zIndex)
+//				console.log(kids[i], kids[i].style.zIndex)
 			}
 		}
-		console.log("no", no)
 		
 		window.setTimeout(function(){rotate(el, no+1)}, 5000);
 	}

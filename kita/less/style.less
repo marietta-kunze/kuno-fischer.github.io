@@ -10,8 +10,11 @@
 @link_col: #fff;
 @header_col: @text_col;
 
-// fonts
 
+// width for mobile version (reduced width)
+@handset: 500px;
+
+// fonts
 @import url(//fonts.googleapis.com/css?family=Gentium+Basic:400,700);
 @import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500);
 
@@ -26,51 +29,90 @@
 @import 'typo.less';
 @import 'photos.less';
 
-.cd-fixed-bg {
-	background-image: url(../img/bg.png);
+@media screen {
+
+	.cd-fixed-bg {
+		background-image: url(../img/bg.png);
+	}
+	
+	.cd-fixed-bg,
+	.cd-scrolling-bg {
+		color: @text_col;
+	}
+
+	.cd-fixed-bg.home,
+	.cd-scrolling-bg.home,
+	.cd-scrolling-bg.home h1,
+	.cd-scrolling-bg.home h2,
+	.cd-scrolling-bg.home h3 {
+		background-color: @col_home;
+		a[href]:hover {color: darken(@col_home, 20%);}
+	}
+
+	.cd-fixed-bg.aktuell,
+	.cd-scrolling-bg.aktuell,
+	.cd-scrolling-bg.aktuell h1,
+	.cd-scrolling-bg.aktuell h2,
+	.cd-scrolling-bg.aktuell h3 {
+		background-color: @col_aktuell;
+		a[href]:hover {color: darken(@col_aktuell, 20%);}
+	}
+
+	.cd-fixed-bg.kita,
+	.cd-scrolling-bg.kita,
+	.cd-scrolling-bg.kita h1,
+	.cd-scrolling-bg.kita h2,
+	.cd-scrolling-bg.kita h3 {
+		background-color: @col_kita;
+		a[href]:hover {color: darken(@col_kita, 20%);}
+	}
+
+	.cd-fixed-bg.konzept,
+	.cd-scrolling-bg.konzept,
+	.cd-scrolling-bg.konzept h1,
+	.cd-scrolling-bg.konzept h2,
+	.cd-scrolling-bg.konzept h3 {
+		background-color: @col_konzept;
+		a[href]:hover {color: darken(@col_konzept, 20%);}
+	}
+
+	.cd-fixed-bg.kontakt,
+	.cd-scrolling-bg.kontakt,
+	.cd-scrolling-bg.kontakt h1,
+	.cd-scrolling-bg.kontakt h2,
+	.cd-scrolling-bg.kontakt h3 {
+		background-color: @col_kontakt;
+		a[href]:hover {color: darken(@col_kontakt, 20%);}
+	}
+
 }
 
-.cd-fixed-bg.home,
-.cd-scrolling-bg.home,
-.cd-scrolling-bg.home h1,
-.cd-scrolling-bg.home h2,
-.cd-scrolling-bg.home h3 {
-	background-color: @col_home;
-	a[href]:hover {color: darken(@col_home, 20%);}
-}
-
-.cd-fixed-bg.aktuell,
-.cd-scrolling-bg.aktuell,
-.cd-scrolling-bg.aktuell h1,
-.cd-scrolling-bg.aktuell h2,
-.cd-scrolling-bg.aktuell h3 {
-	background-color: @col_aktuell;
-	a[href]:hover {color: darken(@col_aktuell, 20%);}
-}
-
-.cd-fixed-bg.kita,
-.cd-scrolling-bg.kita,
-.cd-scrolling-bg.kita h1,
-.cd-scrolling-bg.kita h2,
-.cd-scrolling-bg.kita h3 {
-	background-color: @col_kita;
-	a[href]:hover {color: darken(@col_kita, 20%);}
-}
-
-.cd-fixed-bg.konzept,
-.cd-scrolling-bg.konzept,
-.cd-scrolling-bg.konzept h1,
-.cd-scrolling-bg.konzept h2,
-.cd-scrolling-bg.konzept h3 {
-	background-color: @col_konzept;
-	a[href]:hover {color: darken(@col_konzept, 20%);}
-}
-
-.cd-fixed-bg.kontakt,
-.cd-scrolling-bg.kontakt,
-.cd-scrolling-bg.kontakt h1,
-.cd-scrolling-bg.kontakt h2,
-.cd-scrolling-bg.kontakt h3 {
-	background-color: @col_kontakt;
-	a[href]:hover {color: darken(@col_kontakt, 20%);}
+@media print {
+	body, td, textarea, input {
+		font-size: 12px;
+	}
+	
+	.cd-header,
+	ul#photos,
+	div.h:after {
+		display: none;
+	}
+	
+	.cd-scrolling-bg {
+		box-shadow: none;
+		min-height: 0;
+	}
+	
+	.cd-fixed-bg {
+		background-image: none !important;
+		position: relative;
+		min-height: 0px;
+		z-index: 1;
+		
+		h1 {
+			padding-top: 1em;
+			position: relative;
+			text-shadow: none;
+		}
+	}
 }

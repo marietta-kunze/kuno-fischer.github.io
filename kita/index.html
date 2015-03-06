@@ -24,17 +24,17 @@
 </head>
 <body class="debug">
 	<header class="cd-header">
-		<div id="cd-logo"><h3><a href="#home">Home</a><h3></div>
-
-		<nav class="cd-main-nav">
+		<nav class="cd-main-nav" onclick="this.className = (this.className.match(/expand/) ? this.className.replace(/ +expand/g, '') : this.className + ' expand')">
 			<ul class="no">
-				<!-- inser more links here -->
+				<!-- insert more links here -->
 				<li><a href="#aktuell" id="nav_aktuell"><i></i>Termine</a></li>
 				<li><a href="#kita"    id="nav_kita"><i></i>Kita</a></li>
 				<li><a href="#konzept" id="nav_konzept"><i></i>Konzept</a></li>
 				<li><a href="#kontakt" id="nav_kontakt"><i></i>Kontakt</a></li>				
 			</ul>
 		</nav> <!-- cd-main-nav -->
+		
+		<div id="cd-logo"><h3><a href="#home">Home</a><h3></div>
 	</header>
 
 	<main class="cd-main-content">
@@ -48,7 +48,7 @@
 
 <!--				<h3>Images der KITA im Slider oder im Grid</h3>
 				<br></br> -->
-				<p>Im Herzen Charlottenburgs, direkt am Lietzensee liegt die Kindertagsstätte <em>Kita Kuno Fischer Straße</em>.</p>
+				<p>Im Herzen Charlottenburgs, direkt am Lietzensee liegt die Kindertagesstätte <em>Kita Kuno Fischer Straße</em>.</p>
 
 <!--
 				<iframe width='100%' height='300px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/teuberkai.jb79dcen/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidGV1YmVya2FpIiwiYSI6IkZNYWswMVkifQ.OxhlIJ1yBDPqNXNyBKl4vA'></iframe>
@@ -111,7 +111,7 @@
 					<dd>Laternenfest/-umzug</em></dd>
 					
 					<dt>7. Dezember 2015</dt>
-					<dd>Adentsfrühstück</em></dd>
+					<dd>Adventsfrühstück</em></dd>
 					
 					<dt>24. Dezember 2015 – 1. Januar 2016</dt>
 					<dd>Schließtage</em></dd>	
@@ -276,7 +276,7 @@
 			</a>
 			
 			<div class="h"><h3/></div>
-			<p style="text-align: center;"><a href="impressum.html" id="Impressum">Impressum</a></p>
+			<p style="text-align: center;"><a href="impressum.html" id="impressum">Impressum</a></p>
 
 		</div> <!-- cd-fixed-bg -->
 	</main> <!-- cd-main-content -->
