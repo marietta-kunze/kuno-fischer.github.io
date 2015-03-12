@@ -1,13 +1,17 @@
-ul#photos{
+#photos ul{
 	width: 0px;
 	height: 0px;
 	transition: height .2s ease, width .2s ease;
 }
 
-ul#photos.ready {
+#photos.ready ul {
 	opacity: 1;
 	position: relative;
 	margin: 2em auto;
+	
+	height: 500px; // for vw incompatible browsers (no scaling)
+	width: 500px; // for vw incompatible browsers (no scaling)
+	
 	width: 80vw;
 	height: 80vw;
 	
@@ -54,6 +58,62 @@ ul#photos.ready {
 			display: inline;
 			height: 100%;
 			width: auto;
+		}
+	}
+}
+
+#photos.ready {
+	position: relative;
+	padding: .1em;
+	
+	// prevent text selection, when clicking left/right quickly (dblclick)
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none; 
+    -ms-user-select: none;
+	user-select: none;
+	
+	@lr_dim: 40px;
+	
+	.chleft, .chright {
+		position: absolute;
+		left: 5%;
+		top: 50%;
+		margin-top: -@lr_dim/2;
+		height: @lr_dim;
+		width: @lr_dim;
+		border-radius: @lr_dim;
+		
+		cursor: pointer;
+		background: transparent;
+		border: 2px solid transparent;
+		transition: background-color .3s ease, border-color .3s ease;
+				
+		&:hover {
+			background: fade(@text_col, 30%);
+//			border-color: fade(@text_col, 50%);
+		}
+	}
+	
+	.chleft:before, .chright:before {
+		position: absolute;
+		top:0;
+		left:-2px;
+		width: @lr_dim;
+		height: @lr_dim;
+		text-align:center;
+		line-height: @lr_dim;
+//		top: 8px;
+//		left: 11px;
+		color: @text_col;
+	}
+	
+	.chright {
+		left: auto;
+		right: 5%;
+		
+		&:before {
+			left: 2px;
 		}
 	}
 }

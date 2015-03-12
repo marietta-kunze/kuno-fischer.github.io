@@ -38,6 +38,9 @@
 	.cd-fixed-bg,
 	.cd-scrolling-bg {
 		color: @text_col;
+		
+		::-moz-selection { background: #fff; }
+		::selection      { background: #fff; }
 	}
 
 	.cd-fixed-bg.home,
@@ -47,6 +50,8 @@
 	.cd-scrolling-bg.home h3 {
 		background-color: @col_home;
 		a[href]:hover {color: darken(@col_home, 20%);}
+		::-moz-selection { color: @col_home; }
+		::selection      { color: @col_home; }
 	}
 
 	.cd-fixed-bg.aktuell,
@@ -56,6 +61,8 @@
 	.cd-scrolling-bg.aktuell h3 {
 		background-color: @col_aktuell;
 		a[href]:hover {color: darken(@col_aktuell, 20%);}
+		::-moz-selection { color: @col_aktuell; }
+		::selection      { color: @col_aktuell; }
 	}
 
 	.cd-fixed-bg.kita,
@@ -65,6 +72,8 @@
 	.cd-scrolling-bg.kita h3 {
 		background-color: @col_kita;
 		a[href]:hover {color: darken(@col_kita, 20%);}
+		::-moz-selection { color: @col_kita; }
+		::selection      { color: @col_kita; }
 	}
 
 	.cd-fixed-bg.konzept,
@@ -74,6 +83,8 @@
 	.cd-scrolling-bg.konzept h3 {
 		background-color: @col_konzept;
 		a[href]:hover {color: darken(@col_konzept, 20%);}
+		::-moz-selection { color: @col_konzept;}
+		::selection      { color: @col_konzept;}
 	}
 
 	.cd-fixed-bg.kontakt,
@@ -83,6 +94,8 @@
 	.cd-scrolling-bg.kontakt h3 {
 		background-color: @col_kontakt;
 		a[href]:hover {color: darken(@col_kontakt, 20%);}
+		::-moz-selection { color: @col_kontakt;}
+		::selection      { color: @col_kontakt;}
 	}
 
 }

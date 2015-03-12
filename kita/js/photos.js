@@ -4,6 +4,10 @@
 	// - add controls
 	// - add link to source collection
 	// - add responsiveness: store chosen photos, (re)load different sizes depending on viewport width, reset only if thresholds for veiwport widths have been exceeded, create different styles (rect on mobile) that are independent of image sizes
+	
+	var now = new Date().getTime();
+	console.log("loading time", now - startload);
+	
 
 	// by set
 	var set_id = "72157641216022374";
@@ -24,24 +28,33 @@
 		return output;
 	}
 	
-	function rotate(el, no) {
-//		console.info("rotate", el, no, _.gid(el))
+	var next = 0,
+		to = null;
+	
+	function rotate(el, offset) {
+		
+		window.clearTimeout(to);
 		
 		var kids = _.gid(el).childNodes;
-		
-		if (!no || no >= kids.length) {
-			no = 0;
+			
+		next = next + (offset || 0);
+			
+		if (next >= kids.length) {
+			next = 0;
+		} else {
+			if (next < 0) {
+				next = kids.length - 1;
+			}
 		}
 		
 		for (var i=0; i<kids.length; i++) {
 			kids[i].style.zIndex = -2;
-			if (i == no) {
+			if (i == next) {
 				kids[i].style.zIndex = -1;
-//				console.log(kids[i], kids[i].style.zIndex)
 			}
 		}
 		
-		window.setTimeout(function(){rotate(el, no+1)}, 5000);
+		to = window.setTimeout(function(){rotate(el, 1)}, 5000);
 	}
 
 	function init(data){
@@ -69,18 +82,36 @@
 		
 		// apply css styles
 		pel.className = pel.className + " ready";
+
+		var ul = document.createElement("ul");
+		
+		var l = document.createElement("a");
+		l.className="icn chleft";
+		l.onclick = function(){rotate(ul, -1)};
+		l.onmouseover = function(){window.clearTimeout(to)};
+		l.onmouseout = function(){rotate(ul,0)};
+		
+		var r = document.createElement("a")
+		r.className="icn chright";
+		r.onclick = function(){rotate(ul, 1)};
+		r.onmouseover = function(){window.clearTimeout(to)};
+		r.onmouseout = function(){rotate(ul,0)};
+		
+			pel.appendChild(ul);
+			pel.appendChild(l);
+			pel.appendChild(r);
 		
 		// select a random subset of photos
 		choose(photos, 5).forEach(function(photo){
-			var src = "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_" + "b.jpg";
+			var src = "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_" + "c.jpg";
 			var img = document.createElement("img");
 				img.src = src;
 			var li = document.createElement("li");
 			    li.appendChild(img);
-			pel.appendChild(li);
+			ul.appendChild(li);
 		});
 		
-		rotate(pel);
+		rotate(ul);
 		
 	} // init()
 		
