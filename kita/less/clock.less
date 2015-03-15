@@ -1,0 +1,191 @@
+#tagesablauf {
+	position: relative;
+	width: 100%;
+	margin: 2em 0;
+}
+
+#clock {
+	padding-top: 60px;
+	margin: auto;	
+	display: none;
+}
+
+ul#schedule {
+	margin: auto;
+	
+	li:before {
+		display: none;
+	}
+	
+	li {	
+		.time {
+			font-size: .8em;
+			font-weight: 400;
+			letter-spacing: .5pt;
+		}
+		h4 {
+			margin: 0;
+			padding:0;
+			font-size: 1em;
+			line-height:1.1;
+			cursor: pointer;
+		}
+		.desc {
+			display: none;
+			z-index: -1;
+		}
+	}
+}
+
+@media screen and (min-width: 750px) {
+	@desc_width: 600px;
+	@col_high: #444;
+	
+	#clock {
+		display: block;
+	}
+	
+	#svg_ankommen
+	,#svg_fruehstueck
+	,#svg_morgenkreis
+	,#svg_vormittag
+	,#svg_mittag
+	,#svg_mittagsruhe
+	,#svg_vesper
+	,#svg_abholen {
+		fill: darken(@col_kita, 10%);
+		cursor: pointer;
+		&:hover,
+		&.active {
+			fill: @col_high;
+		}
+	}
+
+	.border {
+		fill: fade(@text_col, 50%);
+	}
+	
+	ul#schedule {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	
+	ul#schedule li {
+		position: absolute;
+//		outline: 1px dashed white;
+
+		&:hover,
+		&.active {
+			color: @col_high;
+			h4 {
+				color: @col_high;
+				
+				&:before {
+					position: absolute;
+					left: -.3em;
+					content: "\f05a";
+					font-family: FontAwesome;
+				}
+			}
+		}
+		&:hover {
+			.desc {
+				position: relative;
+				z-index: 10;
+				display: block;
+				width: @desc_width;
+				top: 15px;
+				padding: 10px;
+//				border: 1px solid #444;
+				border-radius: 5px;
+				
+				background-color: @text_col;
+				color: #444;
+
+				&:after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					border-width: 10px;
+					border-style: solid;
+					border-color: transparent transparent @text_col transparent;;
+					top: -20px;
+				}
+			}
+		}
+	}
+	
+	#ankommen,
+	#fruehstueck,
+	#morgenkreis,
+	#vormittag {
+		right: 50%;
+		width: 150px;
+	}
+	
+	#ankommen {
+		top: 370px;
+		margin-right: 180px;
+		.desc {left: -50px;}
+		.desc:after { left: 60px;}
+	}
+	
+	#fruehstueck {
+		top: 280px;
+		margin-right: 210px;
+		.desc {left: -20px;}
+		.desc:after { left: 30px;}
+	}
+	
+	#morgenkreis {
+		top: 200px;
+		margin-right: 210px;
+		.desc {left: -20px;}
+		.desc:after { left: 30px;}
+	}
+	
+	#vormittag {
+		top: 90px;
+		margin-right: 180px;
+		.desc {left: -50px;}
+		.desc:after { left: 60px;}
+	}
+	
+	#mittag {
+		top: 0px;
+		left: 50%;
+		margin-left: -50px;
+		.desc {top: 30px !important; left: -@desc_width/2 + 50px}
+		.desc:after { left: @desc_width/2 - 10px}
+	}
+	
+	#mittagsruhe,
+	#vesper,
+	#abholen {
+		left: 50%;
+		width: 150px;
+	}
+	
+	#mittagsruhe {
+		top: 100px;
+		margin-left: 200px;
+		.desc {right: @desc_width - 180px;}
+		.desc:after { right: 170px;}
+	}
+	
+	#vesper {
+		top: 250px;
+		margin-left: 260px;
+		.desc {right: @desc_width - 120px;}
+		.desc:after { right: 110px;}
+	}
+	
+	#abholen {
+		top: 400px;
+		margin-left: 230px;
+		.desc {right: @desc_width - 140px;}
+		.desc:after { right: 130px;}
+	}
+}
