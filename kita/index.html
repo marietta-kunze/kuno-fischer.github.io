@@ -221,34 +221,35 @@
 							<p class="desc">Um 12.00 Uhr gibt es bei uns Mittagessen; bei den Zwergen schon um 11:30. In unserer Kindertagesstätte bereitet unsere Köchin nach den Empfehlungen der Deutschen Gesellschaft für Ernährung e.V. (DGE) eine wohlschmeckende frische Mischkost ohne Schweinefleisch zu. Getränke stehen jederzeit zur Verfügung (Tee oder Wasser). Auch nach dem Mittagessen werden die Zähne geputzt.</p>
 						</li>
 					</ul>
-				</div>
-				
-				<script>
-				// link hover events of svg and li items
-				(function(items){
 					
-					function ac(s) {
-						return s + " active";
-					}
+					<script>
+					// link hover events of svg and li items
+					(function(items){
 					
-					function rc(s) {
-						return s.replace(/ *active/g,"");
-					}
+						function ac(s) {
+							return s + " active";
+						}
 					
-					items.forEach(function(item){
-						var el = _.gid(item);
-						var sel = _.gid("svg_"+item);
+						function rc(s) {
+							return s.replace(/ *active/g,"");
+						}
+					
+						items.forEach(function(item){
+							var el = _.gid(item);
+							var sel = _.gid("svg_"+item);
 						
-						el.onmouseover = function(){sel.setAttribute("class", ac(sel.getAttribute("class")))};
-						el.onmouseout  = function(){sel.setAttribute("class", rc(sel.getAttribute("class")))};
+							el.onmouseover = function(){sel.setAttribute("class", ac(sel.getAttribute("class")))};
+							el.onmouseout  = function(){sel.setAttribute("class", rc(sel.getAttribute("class")))};
 						
-						sel.onmouseover = function(){el.className = ac(el.className)};
-						sel.onmouseout  = function(){el.className = rc(el.className)};
-					});
-				})("ankommen fruehstueck morgenkreis vormittag mittag mittagsruhe vesper abholen".split(" "));
+							sel.onmouseover = function(){el.className = ac(el.className)};
+							sel.onmouseout  = function(){el.className = rc(el.className)};
+						});
+					})("ankommen fruehstueck morgenkreis vormittag mittag mittagsruhe vesper abholen".split(" "));
 				
-				</script>
-
+					</script>
+				</div><!-- end of #tagesablauf -->
+				<p>Für weitere Informationen zu den Tagesabschnitten bewegen Sie Ihren Mauszeiger über den jeweiligen Abschnitt, oder tippen Sie ihn an.</p>
+				
 				<div class="h"><h3>Eingewöhnung</h3></div>
 					<p>Der Eingewöhnung Ihres Kindes gebührt besondere Aufmerksamkeit. Sie ist eine wesentliche Grundlage für das Wohlbefinden und für die Bildungsprozesse in der Kindertagesstätte. Während der Eingewöhnungsphase werden die Kinder von einem Elternteil oder einer dem Kind vertrauten Person über einen längeren Zeitraum (bis zu 3 Wochen) begleitet. </p>
 					<p>Die ersten vier Tage muss die Bezugsperson bei dem Kind bleiben und sich dann allmählich zurückziehen, damit das Kind Kontakt zu den Pädagoginnen und Kindern aufnehmen kann. Eine unserer Pädagoginnen wird besonders auf Ihr Kind und Ihre Sorgen als Ansprechpartnerin (Bezugspädagogin) eingehen. Während der Eingewöhnungsphase wird die Anwesenheit des Kindes in der Kita langsam ausgedehnt. </p>

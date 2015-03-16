@@ -5,7 +5,8 @@
 }
 
 #clock {
-	padding-top: 60px;
+	position: relative;
+	padding: 60px 0 1em;
 	margin: auto;	
 	display: none;
 }
@@ -22,6 +23,7 @@ ul#schedule {
 			font-size: .8em;
 			font-weight: 400;
 			letter-spacing: .5pt;
+			cursor: pointer;
 		}
 		h4 {
 			margin: 0;
@@ -77,11 +79,11 @@ ul#schedule {
 
 		&:hover,
 		&.active {
-			color: @col_high;
 			h4 {
 				color: @col_high;
 				
 				&:before {
+					color: @text_col;
 					position: absolute;
 					left: -.3em;
 					content: "\f05a";
