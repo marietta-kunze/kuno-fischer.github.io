@@ -5,12 +5,16 @@
 	// - add link to source collection
 	// - add responsiveness: store chosen photos, (re)load different sizes depending on viewport width, reset only if thresholds for veiwport widths have been exceeded, create different styles (rect on mobile) that are independent of image sizes
 	
+	
 	var now = new Date().getTime(), time = now-startload;
 	console.log("startload", startload);
 	console.log("now", now);
 	console.log("load time", time);
 	_.gid("dbg").innerHTML = "loading time: " + time + "ms";
 	
+	if (time > 3000) {
+		return;
+	}
 
 	// by set
 	var set_id = "72157641216022374";
