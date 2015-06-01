@@ -12,7 +12,7 @@
 
 
 // width for mobile version (reduced width)
-@handset: 500px;
+@handset: 550px;
 
 // fonts
 @import url(//fonts.googleapis.com/css?family=Gentium+Basic:400,700);
@@ -51,7 +51,10 @@
 		::selection      { background: #fff; }
 	}
 
-	.cd-fixed-bg.home,
+	.cd-fixed-bg.home {
+		background-color: white;
+		background-size: contain;
+	}
 	.cd-scrolling-bg.home,
 	.cd-scrolling-bg.home h1,
 	.cd-scrolling-bg.home h2,
